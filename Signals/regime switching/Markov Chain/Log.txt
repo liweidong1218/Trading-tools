@@ -1,0 +1,4 @@
+Issues to be fixed:
+
+1. Only can handle multiple tickers
+2. 
