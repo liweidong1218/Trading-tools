@@ -1,0 +1,22 @@
+5/30/2021: 
+1. Included all dependent .py files as well as test data into current 'test' directory 
+2. Updated all files to adapt change in #1. Going forward, we can update/test run code under 'test' directory without any presettings. 
+3. Tested 'test backtest class.ipynb' file. 
+4. Made several comments / questions in 'backtest_class.py' file. 
+
+6/1/2021: 
+1. Updated tech-debt.txt
+
+6/2/2921:
+1. Added pnl calculation
+2. Included market price 
+3. included order type in inventory
+
+6/6/2021
+1. Fixed cum_pnl issue with BTC order
+2. Skipped pnl calculation if no position is entered 
+
+7/19/2021
+1. Cleaned up unused files
+2. Completed the backtest sample
+3. Include a user mannual 

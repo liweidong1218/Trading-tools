@@ -1,0 +1,5 @@
+User mannual
+Author: Liwei Dong
+Date: 7/19/2021
+
+To use this backtesting engine, pleased copy the entire folder to your directory. Update the data directory accordingly. 
