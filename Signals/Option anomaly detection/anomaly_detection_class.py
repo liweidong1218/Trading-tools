@@ -62,7 +62,7 @@ class anomalyDetector:
 
     def anomaly_dates(self, df, thresh):
         """
-        return dates in which variables exceed thresh
+        return dates in which variables exceed threshold
         """
         grouped = df.groupby('quotedate')
         conditions = []
