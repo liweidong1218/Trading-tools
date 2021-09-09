@@ -91,7 +91,7 @@ def minute_chain(ticker, opt,filename):
                                     for k in opt[i][j].keys()},
                                orient='index',columns=col)
         
-        time_now = dt.datetime.strptime(filename[len(ticker)+1:-8],'%b %d %H_%M_%S %Y') 
+        time_now = dt.datetime.strptime(filename[len(ticker)+1:-4],'%m%d%Y %H_%M_%S') 
         df['Date'] = time_now
         return df
 
@@ -233,7 +233,7 @@ def readChain(ticker, folder_path, date_list):
                 opt = json.load(read_file) # speed up
 
             expiry_date = getExpiry(opt)
-            time_now = dt.datetime.strptime(filename[len(ticker)+1:-4],'%a %b %d %H_%M_%S %Y') 
+            time_now = dt.datetime.strptime(filename[len(ticker)+1:-4],'%m%d%Y %H_%M_%S') 
 
             t = 0
             for exp_date in expiry_date: # speed up
@@ -257,14 +257,14 @@ def readChain(ticker, folder_path, date_list):
     
     else:
         '''read in dates specified by the user'''
-        file_list = [x for x in dir_list if dt.datetime.strptime(x[len(ticker)+1:-4],'%a %b %d %H_%M_%S %Y').date() in date_list]
+        file_list = [x for x in dir_list if dt.datetime.strptime(x[len(ticker)+1:-4],'%m%d%Y %H_%M_%S').date() in date_list]
         
         for filename in file_list:
             with open(folder_path + '/' + filename, 'r') as read_file:
                 opt = json.load(read_file)
 
             expiry_date = getExpiry(opt)
-            time_now = dt.datetime.strptime(filename[len(ticker)+1:-4],'%a %b %d %H_%M_%S %Y') 
+            time_now = dt.datetime.strptime(filename[len(ticker)+1:-4],'%m%d%Y %H_%M_%S') 
 
             t = 0
             for exp_date in expiry_date:
@@ -292,7 +292,7 @@ def readChain(ticker, folder_path, date_list):
 
 def day_chain(ticker, folder_path, date_list):
     dir_list = os.listdir(folder_path)
-    file_list = [x for x in dir_list if dt.datetime.strptime(x[len(ticker)+1:-8],'%b %d %H_%M_%S %Y').date() in date_list]
+    file_list = [x for x in dir_list if dt.datetime.strptime(x[len(ticker)+1:-4],'%m%d%Y %H_%M_%S').date() in date_list]
     df = []
     
     for filename in file_list:
